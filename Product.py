@@ -25,7 +25,6 @@ class Product:
                not key.startswith('__') and not callable(key) and key.startswith('Snack_')
                   and selection is product[0]]
 
-        print(result)
         return result[0][0] if len(result) else None
 
     @staticmethod

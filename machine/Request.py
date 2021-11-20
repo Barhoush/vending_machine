@@ -10,7 +10,4 @@ class Request:
         self.product = product if product else Product.get_product(selection=selected_products)
         if self.product is None:
             print("Log: product is none!")
-        else:
-            print("Found product: ", product)
-
         self.entered_coins = CoinGroup(entered_coins)

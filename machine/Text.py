@@ -36,7 +36,6 @@ class Text(VendingMachine):
         request = Request(self.selected_product, coins, product)
         # change = CoinGroup(coins=coins)
         change = self.controller.calculate_change(request=request)
-        print('change', change)
         self.change = change
 
     def display_change_message(self, message: str) -> None:
