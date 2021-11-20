@@ -1,9 +1,9 @@
 class Product:
-    XL = (1, 3)  # My favorite drink :)
-    RED_BULL = (2, 6)
-    KINDER = (3, 5)
-    WATER = (4, 1)
-    BURGER = (5, 50)
+    Snack_XL = (1, 3)  # My favorite drink :)
+    Snack_REDBULL = (2, 6)
+    Snack_KINDER = (3, 5)
+    Snack_WATER = (4, 1)
+    Snack_BURGER = (5, 50)
 
     number: int = None
     price: int = None
@@ -18,9 +18,21 @@ class Product:
     def get_price(self) -> int:
         return self.price
 
-    def get_product(self, selection):
+    @staticmethod
+    def get_product(selection) -> int:
         # Map the selected number from user with an actual product
         result = [product for key, product in Product.__dict__.items() if
-               not key.startswith('__') and not callable(key) and selection is product.get_number()]
+               not key.startswith('__') and not callable(key) and key.startswith('Snack_')
+                  and selection is product[0]]
+
+        print(result)
+        return result[0][0] if len(result) else None
+
+    @staticmethod
+    def get_product_obj(selection) -> any:
+        # Map the selected number from user with an actual product
+        result = [product for key, product in Product.__dict__.items() if
+               not key.startswith('__') and not callable(key) and key.startswith('Snack_')
+                  and selection is product[0]]
 
         return result[0] if len(result) else None

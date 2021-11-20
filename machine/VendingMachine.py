@@ -13,3 +13,6 @@ class VendingMachine(MachineHelper):
     def enter_coins(self, coins: list) -> None:
         """Enter the coins list"""
         pass
+
+    def display_change_message(self, message) -> None:
+        """Displays change message"""

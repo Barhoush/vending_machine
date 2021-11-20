@@ -9,8 +9,9 @@ class Coin(enum.Enum):
     # cuz the 1$ is not a coin but you mentioned it in the CoinSlot section :)
     value = None
 
-    def __init__(self, value: int):
-        self.value = value
+    # def __init__(self, value):
+    #     self.value = value
 
-    def get_value(self) -> int:
-        return self.value
+    # def get_value(self) -> int:
+    #     return self.value
+
